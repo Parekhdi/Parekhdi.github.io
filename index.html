@@ -71,32 +71,19 @@
       color: #FFD700;
     }
 
-    .contact-card{
-       display: none;
-    }
-    .contact-title{
-      color: #FFD700;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-    .sidebar a{
-      display:block; color:#FFD700; text-decoration:none; margin:10px 0; font-weight:700;
-    }
-    .sidebar .contact-card a{ 
-      color:#FFD700; text-decoration:underline; 
-    }
+    /* Show only one main section at a time */
+   .main section { display: none; }
 
-    /* When the URL hash is #contact, show the panel */
-    #contact:target {
-     display: block;
-    }
+   /* Default: show Home */
+   #home { display: block; }
 
-    /* Style the Close link inside contact card */
-    .contact-close {
-      color: #FFD700;
-      text-decoration: underline;
-    }
+   /* When Contact is targeted, show Contact and hide Home */
+   #contact:target { display: block; }
+   #contact:target ~ #home { display: none; }
 
+   /* If Home is targeted explicitly, show it and hide Contact */
+   #home:target { display: block; }
+   #home:target ~ #contact { display: none; }
   </style>
 </head>
 <body>
@@ -106,17 +93,6 @@
     <a href="index.html">Home</a>
     <a href="cv.pdf">CV</a>
     <a href="#contact">Contact</a>
-    
-      <!-- Hidden contact panel (shown when Contact is clicked) -->
-    <div id="contact" class="contact-card">
-      <div class="contact-title">Contact</div>
-      <div>Email: <a href="mailto:dparekh@scu.edu">dparekh@scu.edu</a></div>
-      <div>LinkedIn: <a href="https://www.linkedin.com/in/parekhdivya/" target="_blank" rel="noopener noreferrer">parekhdivya</a></div>
-      <div style="margin-top:8px;">
-        <a href="#" class="contact-close">Close</a>
-      </div>
-    </div>
-  </div>
 
   <!-- Main Content -->
   <div class="main">
@@ -124,10 +100,19 @@
      <h1>Divya Parekh</h1>
      <h3>Graduate Student • MS in Information Systems</h3>
     </div>
-    <p>
-      Welcome to my portfolio website!
-      I combine my interests in AI, technology, and management with a focus on addressing complex business challenges through innovative technology solutions. 
-    </p>
+ 
+    <!-- HOME SECTION -->
+    <section id="home">
+     <p>Welcome to my portfolio website! I combine my interests in AI, technology, and management with a focus on addressing complex business challenges through innovative technology solutions.</p>
+    </section>
+
+    <!-- CONTACT SECTION (will replace Home when clicked) -->
+    <section id="contact">
+     <h3>Contact</h3>
+     <p>Email: <a href="mailto:dparekh@scu.edu">dparekh@scu.edu</a></p>
+     <p>LinkedIn: <a href="https://www.linkedin.com/in/parekhdivya/" target="_blank" rel="noopener noreferrer">/in/parekhdivya</a></p>
+     <p><a href="#home">← Back to Home</a></p>
+    </section>
   </div>
 </body>
 </html>
