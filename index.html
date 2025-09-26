@@ -77,13 +77,15 @@
    /* Default: show Home */
    #home { display: block; }
 
-   /* When Contact is targeted, show Contact and hide Home */
-   #contact:target { display: block; }
-   #contact:target ~ #home { display: none; }
+   /* Show only one main section at a time */
+   .main section { display: none; }
 
-   /* If Home is targeted explicitly, show it and hide Contact */
-   #home:target { display: block; }
-   #home:target ~ #contact { display: none; }
+   /* Default: show Home */
+   #home { display: block; }
+
+   /* Show whichever section is targeted */
+   .main section:target { display: block; }
+
   </style>
 </head>
 <body>
