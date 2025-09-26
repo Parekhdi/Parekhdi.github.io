@@ -72,13 +72,7 @@
     }
 
     .contact-card{
-      margin-top: 20px;
-      padding: 12px;
-      background: rgba(255,255,255,0.06);
-      border-radius: 8px;
-      text-align: left;
-      font-size: 0.95rem;
-      line-height: 1.35;
+       display: none;
     }
     .contact-title{
       color: #FFD700;
@@ -88,7 +82,20 @@
     .sidebar a{
       display:block; color:#FFD700; text-decoration:none; margin:10px 0; font-weight:700;
     }
-    .sidebar .contact-card a{ color:#FFD700; text-decoration:underline; }
+    .sidebar .contact-card a{ 
+      color:#FFD700; text-decoration:underline; 
+    }
+
+    /* When the URL hash is #contact, show the panel */
+    #contact:target {
+     display: block;
+    }
+
+    /* Style the Close link inside contact card */
+    .contact-close {
+      color: #FFD700;
+      text-decoration: underline;
+    }
 
   </style>
 </head>
@@ -98,13 +105,17 @@
     <img src="DivyaParekh.JPG">
     <a href="index.html">Home</a>
     <a href="cv.pdf">CV</a>
+    <a href="#contact">Contact</a>
     
-    <div class="contact-card">
+      <!-- Hidden contact panel (shown when Contact is clicked) -->
+    <div id="contact" class="contact-card">
       <div class="contact-title">Contact</div>
       <div>Email: <a href="mailto:dparekh@scu.edu">dparekh@scu.edu</a></div>
-      <div>LinkedIn: <a href="https://www.linkedin.com/in/parekhdivya/" target="_blank" rel="noopener noreferrer">/in/<parekhdivya></a></div>
+      <div>LinkedIn: <a href="https://www.linkedin.com/in/parekhdivya/" target="_blank" rel="noopener noreferrer">parekhdivya</a></div>
+      <div style="margin-top:8px;">
+        <a href="#" class="contact-close">Close</a>
+      </div>
     </div>
-
   </div>
 
   <!-- Main Content -->
