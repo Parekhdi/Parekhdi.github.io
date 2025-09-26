@@ -71,20 +71,15 @@
       color: #FFD700;
     }
 
-    /* Show only one main section at a time */
-   .main section { display: none; }
-
-   /* Default: show Home */
-   #home { display: block; }
-
    /* Show only one main section at a time */
    .main section { display: none; }
 
    /* Default: show Home */
    #home { display: block; }
 
-   /* Show whichever section is targeted */
-   .main section:target { display: block; }
+   /* When Contact is targeted, show it and hide Home */
+   #contact:target { display: block; }
+   #contact:target ~ #home { display: none; }
 
   </style>
 </head>
@@ -105,6 +100,14 @@
       <h3>Graduate Student • MS in Information Systems</h3>
     </div>
 
+    <!-- CONTACT SECTION (appears in main when Contact is clicked) -->
+    <section id="contact">
+      <h3>Contact</h3>
+      <p>Email: <a href="mailto:dparekh@scu.edu">dparekh@scu.edu</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/parekhdivya/" target="_blank" rel="noopener noreferrer">/in/parekhdivya</a></p>
+      <p><a href="#home">← Back to Home</a></p>
+    </section>
+
     <!-- HOME SECTION -->
     <section id="home">
       <p>
@@ -114,13 +117,7 @@
       </p>
     </section>
 
-    <!-- CONTACT SECTION (appears in main when Contact is clicked) -->
-    <section id="contact">
-      <h3>Contact</h3>
-      <p>Email: <a href="mailto:dparekh@scu.edu">dparekh@scu.edu</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/parekhdivya/" target="_blank" rel="noopener noreferrer">/in/parekhdivya</a></p>
-      <p><a href="#home">← Back to Home</a></p>
-    </section>
+
   </div>
 </body>
 
